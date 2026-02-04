@@ -1,2 +1,2 @@
-# RSPplusplus
+# RSP++
 RSP supporting files
