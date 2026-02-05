@@ -1,0 +1,612 @@
+{
+  "info": {
+    "_postman_id": "f24c46ed-eddb-49a7-93d0-90c64cecfde0",
+    "name": "ES2+",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2292727"
+  },
+  "item": [
+    {
+      "name": "ES2+: downloadOrder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"iccid\" : \"89125555738333875222\",\n    \"eid\": null,\n    \"profileType\" : \"Google 3\",\n    \"profileName\": \"Profile 111\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/downloadOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "downloadOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2+: confirmOrder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"eid\" : null,\n    \"iccid\" : \"89125555738333875222\",\n    \"matchingId\": \"DQ5TR14ME14517788\",\n    \"confirmationCode\": null,\n    \"profileName\": \"Profile 111\",\n    \"smdsAddress\" : \"smds.intergalaxy.org\",\n    \"rootSmdsAddress\": null,\n    \"releaseFlag\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/confirmOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "confirmOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2+: releaseProfile",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"iccid\": \"89125555738333875222\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/releaseProfile",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "releaseProfile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2+: cancelOrder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"eid\" : \"89049088000000000019081500000634\",\n    \"iccid\" : \"98831027100903000041\",\n    \"matchingId\": \"EZ0COLDSJK6Z-STO\",\n    \"finalProfileStatusIndicator\": \"Available\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/cancelOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "cancelOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2+: rpmOrder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n     \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"eid\": \"89049088000000000019081500000634\",\n    \"rpmScript\": \"MCYwEYABAIEMWgqYgxAnEAkDAAABMBGAAQGCDFoKmIMQJxAJAwAAAg==\",\n    \"matchingId\": \"D1QD80TIGX3AKN8A\",\n    \"rootSmdsAddress\": \"\",\n    \"altSmdsAddress\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp3/es2plus/rpmOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp3",
+            "es2plus",
+            "rpmOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get MNO prfiles",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `",
+              "<style type=\"text/css\">",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+              "    .tftable tr {background-color:#ffffff;}",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+              "    .tftable tr:hover {background-color:#e0ffff;}",
+              "</style>",
+              "",
+              "<table class=\"tftable\" border=\"1\">",
+              "    <tr>",
+              "        <th>ID</th>",
+              "        <th>ICCID</th>",
+              "        <th>Matching ID</th>",
+              "        <th>Profile Name</th>",
+              "        <th>Nick Name</th>",
+              "        <th>Profile Class</th>",
+              "        <th>Status</th>",
+              "        <th>Profile Type</th>",
+              "        <th>Create Date</th>",
+              "    </tr>",
+              "    ",
+              "    {{#each response.data}}",
+              "        <tr id=row_{{@key}}>",
+              "            <td>{{id}}</td>",
+              "            <td>{{iccid}}</td>",
+              "            <td>{{matchingId}}</td>",
+              "            <td>{{profileName}}</td>",
+              "            <td>{{nickName}}</td>",
+              "            <td>{{profileClass}}</td>",
+              "            <td>{{status}}</td>",
+              "            <td>{{profileType}}</td>",
+              "            <td>{{createDate}}</td>",
+              "        </tr>",
+              "    {{/each}}",
+              "</table>",
+              "`;",
+              "",
+              "function constructVisualizerPayload() {",
+              "    return {response: pm.response.json()}",
+              "}",
+              "",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"pageNumber\" : 0,\n    \"pageSize\": 1000,\n    \"status\": \"RELEASED\",\n    \"profileType\": \"\",\n    \"iccid\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/profiles",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "profiles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Remove profile",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"iccid\": \"89380172019030330014\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/profiles/delete",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "profiles",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get transport keys",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n       \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/transportKeys",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "transportKeys"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: get rpmOrdersList",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"eid\" : \"\",\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"status\": \"PENDING\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp3/es2plus/rpmOrdersList",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp3",
+            "es2plus",
+            "rpmOrdersList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get applications versions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/versions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "versions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get operator credentials",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n       \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"iccid\": null,\n    \"imsi\": null\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/operatorCredentialsList",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "operatorCredentialsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get profile transitions history Copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n       \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"iccid\": null\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/profileTransitions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "profileTransitions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Update Profile Metadata",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\": {\n        \"functionRequesterIdentifier\": \"15df5f0b-7965-4a34-8e6f-8deb0e296c1b\",\n        \"functionCallIdentifier\": \"updateMetadata\"\n    },\n    \"iccid\": \"89212061311156141587\",\n    \"spn\": \"Sensorise\",\n    \"profileName\": \"Profile 111\",\n    \"profilePolicyRules\": \"\",  //OPTIONAL\n    \"profileOwner\": \"\",  //OperatorId OPTIONAL, -- Tag 'B7'\n    \"serviceSpecificDataStoredInEuicc\": \"\",   //tag 'BF22' OPTIONAL\n    \"serviceSpecificDataNotStoredInEuicc\": \"\",  // Tag 'BF23' OPTIONAL\n    \"serviceProviderMessage\": \"\",  //OPTIONAL\n    \"lprConfiguration\": \"\",  //tag 'BC'  OPTIONAL\n    \"enterpriseConfiguration\": \"\",  // tag 'BD' OPTIONAL\n    \"serviceDescription\": \"\",  //tag '9F1F' OPTIONAL\n    \"estimatedProfileSize\": null,  // Tag '9F21' OPTIONAL\n    \"hriServerAddress\": \"\",  //OPTIONAL\n    \"notificationConfiguration\": [\n        {\n            \"profileManagementOperation\": \"0780\", //install notification\n            \"notificationAddress\": \"sensorise.operator.qqq\"\n        },\n        {\n            \"profileManagementOperation\": \"0410\", //delete notification\n            \"notificationAddress\": \"smdp.stage.senseprom.sensorise.net\"\n        }\n    ],\n    \"rpmConfiguration\": { //optional param, may be absent\n        \"managingDpOid\": \"\",\n        \"rpmType\": \"\",\n        \"tagList\": \"\",\n        \"pollingAddress\": \"\",\n        \"allowedCiPKId\": \"\",\n        \"profileOwnerOid\": \"\"\n    },\n    \"deviceChangeConfiguration\": { //optional param, may be absent\n        //for device change should be specified only this set of parameters\n        \"smdpAddressForDc\": \"stage.smdp.senseprom.sensorise.net\",\n        \"allowedCiPKId\": \"\", //optional\n        \"eidRequired\": true,\n        \"tacRequired\": true,\n\n        //or this one\n        \"activationCodeForDc\": \"\",\n        \"deleteOldProfile\": true\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/updateMetadata",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "updateMetadata"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get Profile Metadata",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\": {\n        \"functionRequesterIdentifier\": \"15df5f0b-7965-4a34-8e6f-8deb0e296c1b\",\n        \"functionCallIdentifier\": \"getProfileMetadata\"\n    },\n    \"iccid\": \"89212061311156141587\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/getProfileMetadata",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "getProfileMetadata"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Update Profile Icon",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "functionRequesterIdentifier",
+              "value": "{{vendorToken}}",
+              "type": "text"
+            },
+            {
+              "key": "functionCallIdentifier",
+              "value": "updateIcon",
+              "type": "text"
+            },
+            {
+              "key": "iccid",
+              "value": "89212061311156141587",
+              "type": "text"
+            },
+            {
+              "key": "icon",
+              "type": "file",
+              "src": "/Users/olenanahorna/work/Sim-Card/smdpplus/smdp/src/test/resources/images/icon_success.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/updateMetadataIcon",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "updateMetadataIcon"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: Get Profile Notifications",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"header\": {\n        \"functionRequesterIdentifier\": {{vendorToken}},\n        \"functionCallIdentifier\": \"getProfileNotifications\"\n    },\n    \"iccid\": \"89212061311156141587\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/getProfileMetadata",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "getProfileMetadata"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://es2plus.intergalaxy.org",
+      "type": "default"
+    },
+    {
+      "key": "vendorToken",
+      "value": "15df5f0b-7965-4a34-8e6f-8deb0e296c1b",
+      "type": "default"
+    }
+  ]
+}
