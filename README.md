@@ -1,4 +1,4 @@
 # RSP++
 RSP supporting files
 
-More documents are available at: https://swisscardsystems.com/rspplusplus/
+More documents are available at: https://simburg.com/rspplusplus/
