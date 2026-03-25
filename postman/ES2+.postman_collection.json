@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "f24c46ed-eddb-49a7-93d0-90c64cecfde0",
+    "_postman_id": "e5b533cf-0110-442e-b708-405ad450a8b6",
     "name": "ES2+",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "2292727"
@@ -146,6 +146,76 @@
             "rsp3",
             "es2plus",
             "rpmOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: uploadOrder",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ //Upload ready encrypted by transportKey profile\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"uploadOrder-111\"\n    },\n    \"profileName\": \"ReadyProfile\", //if empty, profileName would be get from profileType\n    \"transportKey\": \"8BAF47\",\n    \"profileType\" : \"Google T1\",\n    \"serviceProviderName\": \"Sensorise\",\n    \"matchingId\": \"\",\n    \"confirmationCode\": \"\",\n    \"smdsAddress\": \"\",\n    \"rootSmdsAddress\": \"\",\n    \"releaseFlag\": true,\n    \"eid\": \"89049032000000000000221202692094\",\n    \"data\": \"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\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/uploadOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "uploadOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ES2++: createOrder",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Client-Subject",
+            "value": "Operator1234567",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ //Create ready profile from profileType and operatorCredentials or from profileType and list of values for profileType placeholders\n    \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"createOrder-111\"\n    },\n    \"profileName\": \"Profile Test 11\", // could be nullable\n    \"profileType\": \"Google 1 - AK\",\n    \"profileClass\" : 2,\n    \"matchingId\": \"MATCHINGID14567\", // could be nullable\n    \"confirmationCode\": \"123456\", // could be nullable\n    \"serviceProviderName\": \"SPN11\",\n    \"transportKey\": \"8BAF47\" ,\n    \"iccid\": \"89275042374274937510\",\n    \"values\": [\n        {\n            \"key\": \"imsi\",\n            \"value\": \"802921754465721640\"\n        },\n         {\n            \"key\": \"ki\",\n            \"value\": \"0CEC1BB0B58746CB7AA58B354F4FBBF7\"\n        },\n         {\n            \"key\": \"opc\",\n            \"value\": \"0CEC1BB0B58746CB7AA58B354F4FBBF7\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/gsma/rsp2/es2plus/createOrder",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "gsma",
+            "rsp2",
+            "es2plus",
+            "createOrder"
           ]
         }
       },
@@ -306,7 +376,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"eid\" : \"\",\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"status\": \"PENDING\"\n}",
+          "raw": "{\n  \"header\" : {\n        \"functionRequesterIdentifier\" : \"{{vendorToken}}\",\n        \"functionCallIdentifier\" : \"TX-567\"\n    },\n    \"id\": 8,\n    \"eid\" : \"\",\n    \"matchingId\": \"\",\n    \"status\": \"\",\n    \"downloadFails\": \"0-5\",\n    \"pageNumber\": 0,\n    \"pageSize\": 20,\n    \"sort\": \"-id\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -378,7 +448,7 @@
       "response": []
     },
     {
-      "name": "ES2++: Get profile transitions history Copy",
+      "name": "ES2++: Get profile transitions history",
       "request": {
         "method": "POST",
         "header": [],
@@ -422,7 +492,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"header\": {\n        \"functionRequesterIdentifier\": \"15df5f0b-7965-4a34-8e6f-8deb0e296c1b\",\n        \"functionCallIdentifier\": \"updateMetadata\"\n    },\n    \"iccid\": \"89212061311156141587\",\n    \"spn\": \"Sensorise\",\n    \"profileName\": \"Profile 111\",\n    \"profilePolicyRules\": \"\",  //OPTIONAL\n    \"profileOwner\": \"\",  //OperatorId OPTIONAL, -- Tag 'B7'\n    \"serviceSpecificDataStoredInEuicc\": \"\",   //tag 'BF22' OPTIONAL\n    \"serviceSpecificDataNotStoredInEuicc\": \"\",  // Tag 'BF23' OPTIONAL\n    \"serviceProviderMessage\": \"\",  //OPTIONAL\n    \"lprConfiguration\": \"\",  //tag 'BC'  OPTIONAL\n    \"enterpriseConfiguration\": \"\",  // tag 'BD' OPTIONAL\n    \"serviceDescription\": \"\",  //tag '9F1F' OPTIONAL\n    \"estimatedProfileSize\": null,  // Tag '9F21' OPTIONAL\n    \"hriServerAddress\": \"\",  //OPTIONAL\n    \"notificationConfiguration\": [\n        {\n            \"profileManagementOperation\": \"0780\", //install notification\n            \"notificationAddress\": \"sensorise.operator.qqq\"\n        },\n        {\n            \"profileManagementOperation\": \"0410\", //delete notification\n            \"notificationAddress\": \"smdp.stage.senseprom.sensorise.net\"\n        }\n    ],\n    \"rpmConfiguration\": { //optional param, may be absent\n        \"managingDpOid\": \"\",\n        \"rpmType\": \"\",\n        \"tagList\": \"\",\n        \"pollingAddress\": \"\",\n        \"allowedCiPKId\": \"\",\n        \"profileOwnerOid\": \"\"\n    },\n    \"deviceChangeConfiguration\": { //optional param, may be absent\n        //for device change should be specified only this set of parameters\n        \"smdpAddressForDc\": \"stage.smdp.senseprom.sensorise.net\",\n        \"allowedCiPKId\": \"\", //optional\n        \"eidRequired\": true,\n        \"tacRequired\": true,\n\n        //or this one\n        \"activationCodeForDc\": \"\",\n        \"deleteOldProfile\": true\n    }\n}",
+          "raw": "{\n    \"header\": {\n        \"functionRequesterIdentifier\": \"15df5f0b-7965-4a34-8e6f-8deb0e296c1b\",\n        \"functionCallIdentifier\": \"updateMetadata\"\n    },\n    \"iccid\": \"89212061311156141587\",\n    \"serviceProviderName\": \"Sensorise\",\n    \"profileName\": \"Profile 111\",\n    \"profilePolicyRules\": \"\",  //OPTIONAL\n    \"profileOwner\": \"\",  //OperatorId OPTIONAL, -- Tag 'B7'\n    \"serviceSpecificDataStoredInEuicc\": \"\",   //tag 'BF22' OPTIONAL\n    \"serviceSpecificDataNotStoredInEuicc\": \"\",  // Tag 'BF23' OPTIONAL\n    \"serviceProviderMessage\": \"\",  //OPTIONAL\n    \"lprConfiguration\": \"\",  //tag 'BC'  OPTIONAL\n    \"enterpriseConfiguration\": \"\",  // tag 'BD' OPTIONAL\n    \"serviceDescription\": \"\",  //tag '9F1F' OPTIONAL\n    \"estimatedProfileSize\": null,  // Tag '9F21' OPTIONAL\n    \"hriServerAddress\": \"\",  //OPTIONAL\n    \"notificationConfiguration\": [\n        {\n            \"profileManagementOperation\": \"0780\", //install notification\n            \"notificationAddress\": \"sensorise.operator.qqq\"\n        },\n        {\n            \"profileManagementOperation\": \"0410\", //delete notification\n            \"notificationAddress\": \"smdp.stage.senseprom.sensorise.net\"\n        }\n    ],\n    \"rpmConfiguration\": { //optional param, may be absent\n        \"managingDpOid\": \"\",\n        \"rpmType\": \"\",\n        \"tagList\": \"\",\n        \"pollingAddress\": \"\",\n        \"allowedCiPKId\": \"\",\n        \"profileOwnerOid\": \"\"\n    },\n    \"deviceChangeConfiguration\": { //optional param, may be absent\n        //for device change should be specified only this set of parameters\n        \"smdpAddressForDc\": \"stage.smdp.senseprom.sensorise.net\",\n        \"allowedCiPKId\": \"\", //optional\n        \"eidRequired\": true,\n        \"tacRequired\": true,\n\n        //or this one\n        \"activationCodeForDc\": \"\",\n        \"deleteOldProfile\": true\n    },\n    \"icon\": \"iVBORw0KGgoAAAANSUhEUgAAAD8AAAA/CAMAAABggeDtAAAAPFBMVEUAAACdgWMuLSupjnE1NDS7oYQhIiLOtpbhyqpnXE9UTEOCcV81NjYvMi9dV1UhKSKbjX47OjrNvan///8lTUEXAAAAFHRSTlMA///////////////TRmcZdHqDBm05LIEAAAJgSURBVHic7ZbpltsgDIUDCLE19mTm/d+1EhKLU9uJO//aucfHBy+fJMMFfLv96F/X19fOvam9Pn79jZalBYAua+FJVjW36YqvG39Hkt61eKYRgC8a/5FyZpgPm49EL2WUdwiHlNNH470L3tbgmL07VkgoH4HgjHGdp0ce6iMs9OBApTifUfhUUimNXzgnxaQAmI55ikABpPzsSjE9v3Em1S4940s9cxdYQFvKyL9yxNr9L/I3Xsewjz8SXsf+Aj+N39rMcYUndR6+yXPxl3mw9039F79/yn9jN1/keTY0fkkpgX23/tpTmInp88f7QP59h3eSH8F754f/jWH+pX87b4uZ/UuxnJ3ySwy3F0r9S9N0mn8EAOr3eyMBhNZI2/zcA2nKv+LU/8KrjNviWj/Apv9XuaV8Iyv89AlOv19Wkcl/zVJYztYf5eHJP6ua9yXvmB/L8DR/rvBawFi/V13f2Riv+T/Xj9b/8Dq/Tzv9/0FrG8i4Ek/OdJ7P8+HaKaFUmujis/GBBLL+Dn5fSV7L1AzDv75uDRQZS9gtu1bBysKbQNc9fwzR1yFgfi+rlu+UJ/+H4GPjl1ISyJZ6wA8JTwHKmP+8/+r2SYWd4iFL/8HG/2OzRxPP+YTt1ck/G34UEPQ83Rk8HPKnyt/j417+m23/Pe/z8/xbZP2/wGfgLXdav32xg5cQMbRWY2PnrSUrheafz0hS/7t4LuExcXvwQR+8zbstH6OXHpTAx5JpSqcw8Qt5uf9g8sZ2LGjjBCmVrf/VlKf/n9h+b+2+/2lgLqjz98fjfkEPVfffj/5b/QZMQDLlbqc38QAAAABJRU5ErkJggg==\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -477,60 +547,6 @@
             "rsp2",
             "es2plus",
             "getProfileMetadata"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "ES2++: Update Profile Icon",
-      "request": {
-        "auth": {
-          "type": "noauth"
-        },
-        "method": "POST",
-        "header": [
-          {
-            "key": "X-Client-Subject",
-            "value": "Operator1234567",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "functionRequesterIdentifier",
-              "value": "{{vendorToken}}",
-              "type": "text"
-            },
-            {
-              "key": "functionCallIdentifier",
-              "value": "updateIcon",
-              "type": "text"
-            },
-            {
-              "key": "iccid",
-              "value": "89212061311156141587",
-              "type": "text"
-            },
-            {
-              "key": "icon",
-              "type": "file",
-              "src": "/Users/olenanahorna/work/Sim-Card/smdpplus/smdp/src/test/resources/images/icon_success.png"
-            }
-          ]
-        },
-        "url": {
-          "raw": "{{base_url}}/gsma/rsp2/es2plus/updateMetadataIcon",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "gsma",
-            "rsp2",
-            "es2plus",
-            "updateMetadataIcon"
           ]
         }
       },
@@ -600,13 +616,11 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "https://es2plus.intergalaxy.org",
-      "type": "default"
+      "value": "https://es2plus.intergalaxy.org"
     },
     {
       "key": "vendorToken",
-      "value": "15df5f0b-7965-4a34-8e6f-8deb0e296c1b",
-      "type": "default"
+      "value": "15df5f0b-7965-4a34-8e6f-8deb0e296c1b"
     }
   ]
 }
