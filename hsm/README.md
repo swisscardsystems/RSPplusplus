@@ -87,7 +87,7 @@ ctkmu c -taes -z256 -n TRANSPORT_KEY -aTEDX -s0
 ```
 
 
-## --- Step 3.A ---
+## --- Step 3 ---
 ### Operator: Export wrapped TK
 
 ```bash
@@ -96,7 +96,7 @@ cd /app
 python3 operator_dh.py
 ```
 
-## --- Step 3.B ---
+## --- Step 4 ---
 ### Server: Import wrapped TK
 
 ```bash
@@ -104,7 +104,7 @@ cd /app
 python3 server_dh.py
 ```
 
-## --- Step 4 ---
+## --- Step 5 ---
 ### Server: Calculate KCV
 
 ```bash
