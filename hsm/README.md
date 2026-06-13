@@ -104,6 +104,14 @@ cd /app
 python3 server_dh.py
 ```
 
+## --- Step 4 ---
+### Server: Calculate KCV
+
+```bash
+cd /app
+python3 5_server_kcv.py
+```
+
 ## --- Links ---
 * [ProtectToolkit-C mechanisms](https://thalesdocs.com/gphsm/ptk/protectserver3/docs/ps_ptk_docs/ptkc_programming/ptkc_mechs/index.html)
 * [CKM_ECDH1_DERIVE](https://thalesdocs.com/gphsm/ptk/protectserver3/docs/ps_ptk_docs/ptkc_programming/ptkc_mechs/ckm_ecdh1_derive/index.html)
