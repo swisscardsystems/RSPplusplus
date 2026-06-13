@@ -1,6 +1,6 @@
 # Diffie-Hellman Key Exchange
 
-## --- Step 1 (Restricted) ---
+## --- Step 0 (Restricted) ---
 ## Build And Run Container
 
 ```bash
@@ -12,8 +12,8 @@ docker exec -it dh-hsm-operator bash
 
 ## Initialization
 
-## --- Step 2 ---
-### Server
+## --- Step 1.A ---
+### Server: config HSM config
 
 ```bash
 ctconf
@@ -29,7 +29,12 @@ ctconf -n0
 
 ctkmu p -s0
 # new user PIN for token in Slot 0: 44444444
+```
 
+## --- Step 1.B ---
+### Server: generate ECDH keypair, export PUBLIC
+
+```bash
 ctkmu c -tec -C secp256r1 -n DH_KEY_SERVER -aTMR -s0
 # CKA_SENSITIVE
 # CKA_MODIFIABLE
@@ -39,8 +44,8 @@ cd /app
 python3 server_public_key.py
 ```
 
-## --- Step 3 ---
-### Operator
+## --- Step 2.A ---
+### Operator: perform HSM config
 
 ```bash
 ctconf
@@ -56,31 +61,45 @@ ctconf -n0
 
 ctkmu p -s0
 # new user PIN for token in Slot 0: 44444444
+```
 
+## --- Step 2.B ---
+### Operator: generate ECDH keypair, export PUBLIC
+
+```bash
 ctkmu c -tec -C secp256r1 -n DH_KEY_OPERATOR -aTMR -s0
 # CKA_SENSITIVE
 # CKA_MODIFIABLE
 # CKA_DERIVE
 
+cd /app
+python3 operator_public_key.py
+```
+## --- Step 2.C ---
+### Operator: generate TANSPORT key
+
+```bash
 ctkmu c -taes -z256 -n TRANSPORT_KEY -aTEDX -s0
 # CKA_SENSITIVE
 # CKA_ENCRYPT
 # CKA_DECRYPT
 # CKA_EXTRACTABLE
-
-cd /app
-python3 operator_public_key.py
 ```
 
-## --- Step 4 ---
-### Procedure
+
+## --- Step 3.A ---
+### Operator: Export wrapped TK
 
 ```bash
 # Operator
 cd /app
 python3 operator_dh.py
+```
 
-# Server
+## --- Step 3.B ---
+### Server: Import wrapped TK
+
+```bash
 cd /app
 python3 server_dh.py
 ```
