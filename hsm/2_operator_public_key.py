@@ -6,7 +6,7 @@ lib = pkcs11.lib("/opt/safenet/protecttoolkit7/ptk/lib/libcryptoki.so")
 
 token = lib.get_token(token_label='OPERATOR')
 
-user_pin = getpass.getpass(prompt="Enter PIN: ")
+user_pin = getpass.getpass(prompt="Enter User's PIN: ")
 
 with token.open(user_pin=user_pin) as session:
     operator_pub_key = session.get_key(label='DH_KEY_OPERATOR', object_class=ObjectClass.PUBLIC_KEY)

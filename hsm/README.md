@@ -1,5 +1,6 @@
 # Diffie-Hellman Key Exchange
 
+## --- Step 1 (Restricted) ---
 ## Build And Run Container
 
 ```bash
@@ -11,6 +12,7 @@ docker exec -it dh-hsm-operator bash
 
 ## Initialization
 
+## --- Step 2 ---
 ### Server
 
 ```bash
@@ -37,6 +39,7 @@ cd /app
 python3 server_public_key.py
 ```
 
+## --- Step 3 ---
 ### Operator
 
 ```bash
@@ -69,6 +72,7 @@ cd /app
 python3 operator_public_key.py
 ```
 
+## --- Step 4 ---
 ### Procedure
 
 ```bash
@@ -81,6 +85,6 @@ cd /app
 python3 server_dh.py
 ```
 
-## Links
+## --- Links ---
 * [ProtectToolkit-C mechanisms](https://thalesdocs.com/gphsm/ptk/protectserver3/docs/ps_ptk_docs/ptkc_programming/ptkc_mechs/index.html)
 * [CKM_ECDH1_DERIVE](https://thalesdocs.com/gphsm/ptk/protectserver3/docs/ps_ptk_docs/ptkc_programming/ptkc_mechs/ckm_ecdh1_derive/index.html)

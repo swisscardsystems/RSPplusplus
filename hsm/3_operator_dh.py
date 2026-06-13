@@ -12,7 +12,7 @@ if len(server_pub_bytes) == 67 and server_pub_bytes.startswith(b'\x04\x41'):
     server_pub_bytes = server_pub_bytes[2:]
 
 token = lib.get_token(token_label='OPERATOR')
-user_pin = getpass.getpass(prompt="Enter PIN: ")
+user_pin = getpass.getpass(prompt="Enter User's PIN: ")
 
 with token.open(user_pin=user_pin, rw=True) as session:
     operator_priv_key = session.get_key(label='DH_KEY_OPERATOR', object_class=ObjectClass.PRIVATE_KEY)

@@ -13,7 +13,7 @@ with open("operator_encrypted_key.bin", "rb") as file:
     encrypted_key_blob = file.read()
 
 token = lib.get_token(token_label='SERVER')
-user_pin = getpass.getpass(prompt="Enter PIN: ")
+user_pin = getpass.getpass(prompt="Enter User's PIN: ")
 
 with token.open(user_pin=user_pin, rw=True) as session:
     server_priv_key = session.get_key(label='DH_KEY_SERVER', object_class=ObjectClass.PRIVATE_KEY)
