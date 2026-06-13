@@ -76,7 +76,7 @@ cd /app
 python3 operator_public_key.py
 ```
 ## --- Step 2.C ---
-### Operator: generate TANSPORT key
+### Operator: generate TRANSPORT key
 
 ```bash
 ctkmu c -taes -z256 -n TRANSPORT_KEY -aTEDX -s0
@@ -100,6 +100,7 @@ python3 operator_dh.py
 ### Server: Import wrapped TK
 
 ```bash
+# Server
 cd /app
 python3 server_dh.py
 ```
@@ -108,6 +109,7 @@ python3 server_dh.py
 ### Server: Calculate KCV
 
 ```bash
+# Server
 cd /app
 python3 5_server_kcv.py
 ```
